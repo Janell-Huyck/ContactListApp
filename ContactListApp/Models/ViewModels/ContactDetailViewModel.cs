@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using ContactListApp.Models;
 
 namespace ContactListApp.Models.ViewModels;
 

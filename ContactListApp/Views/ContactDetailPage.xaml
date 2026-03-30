@@ -10,7 +10,7 @@
             <TableSection Title="Contact Information">
                 <TextCell Text="Name" Detail="{Binding Contact.ContactName}" />
                 <TextCell Text="Phone" Detail="{Binding Contact.ContactPhone}" />
-                <TextCell Text="Email" Detail="{Binding Contact.Contact.Email}" />
+                <TextCell Text="Email" Detail="{Binding Contact.ContactEmail}" />
                 <TextCell Text="Description" Detail="{Binding Contact.ContactDescription}"/>
             </TableSection>
         </TableRoot>

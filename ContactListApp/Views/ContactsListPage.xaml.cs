@@ -11,13 +11,19 @@ public partial class ContactsListPage : ContentPage
 		InitializeComponent();
 	}
 
-	private void Lv_ItemTapped(object sender, ItemTappedEventArgs e)
+	private async void Lv_ItemTapped(object sender, ItemTappedEventArgs e)
 	{
-		var contact = e.Item as Contact;
+		if (e.Item is not Contact contact)
+			return;
+
 		var contactViewModel = new ContactDetailViewModel { Contact = contact };
-		var contactDetail = new ContactDetail();
-		contactDetail.BindingContext = contactViewModel;
-		Navigation.PushAsync(contactDetail);
-		contact = "";
+		var contactDetail = new ContactDetailPage
+		{
+			BindingContext = contactViewModel
+		};
+		await Navigation.PushAsync(contactDetail);
+
+		if (sender is ListView listView)
+			listView.SelectedItem = null;
 	}
 }

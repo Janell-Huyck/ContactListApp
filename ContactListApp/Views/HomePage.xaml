@@ -9,7 +9,7 @@
     <VerticalStackLayout Padding="10" Spacing="10">
         <Entry x:Name="contactName" Placeholder="Enter Contact Name" Text="{Binding Contact.ContactName}"/>
         <Entry x:Name="contactPhone" Placeholder="Enter Contact Phone" Text="{Binding Contact.ContactPhone}"/>
-        <Entry x:Name="contactEmail" Placeholder="Enter Contact Email" Text="{Binding Contact.Contact.Email}"/>
+        <Entry x:Name="contactEmail" Placeholder="Enter Contact Email" Text="{Binding Contact.ContactEmail}"/>
         <Editor x:Name="contactDescription" Placeholder="Enter Contact Description" Text="{Binding Contact.ContactDescription}" HeightRequest="100"/>
         <Button x:Name="addButton" Text="Save" Command="{Binding AddCommand}"/>
  

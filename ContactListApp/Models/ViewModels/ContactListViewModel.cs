@@ -1,5 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ContactListApp.Models;
+using ContactListApp.Views;
 using System.Collections.ObjectModel;
 
 namespace ContactListApp.Models.ViewModels;
@@ -13,13 +15,17 @@ partial class ContactListViewModel : ObservableObject
     private Contact contact = new();
 
     [RelayCommand]
-    private void Add()
-    { 
+    private async Task AddAsync()
+    {
         Contacts.Add(Contact);
         Contact = new();
 
-        var contactList = new ContactsList();
-        contactList.BindingContext = contactsViewModel;
-        Navigation.PushAsync(contactList);
+        var contactList = new ContactsListPage
+        {
+            BindingContext = this
+        };
+
+        if (Application.Current?.MainPage is NavigationPage nav)
+            await nav.PushAsync(contactList);
     }
 }
