@@ -13,7 +13,7 @@ public partial class ContactsListPage : ContentPage
 
 	private async void Lv_ItemTapped(object sender, ItemTappedEventArgs e)
 	{
-		if (e.Item is not Contact contact)
+		if (e.Item is not Models.Contact contact)
 			return;
 
 		var contactViewModel = new ContactDetailViewModel { Contact = contact };
